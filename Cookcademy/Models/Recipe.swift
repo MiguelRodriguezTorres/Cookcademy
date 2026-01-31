@@ -55,6 +55,10 @@ struct MainInformation {
 }
 
 struct Ingredient: RecipeComponent {
+    static func pluralName() -> String {
+        self.singularName() + "s"
+    }
+    
     var name: String
     var quantity: Double
     var unit: Unit
@@ -101,6 +105,10 @@ struct Ingredient: RecipeComponent {
 }
 
 struct Direction: RecipeComponent {
+    static func pluralName() -> String {
+        self.singularName() + "s"
+    }
+    
     var description: String
     var isOptional: Bool
     
