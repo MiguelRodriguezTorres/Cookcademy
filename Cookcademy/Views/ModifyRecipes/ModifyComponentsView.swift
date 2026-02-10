@@ -18,7 +18,7 @@ extension RecipeComponent {
         String(describing: self).lowercased()
     }
     
-    static func pluarlName() -> String {
+    static func pluralName() -> String {
         self.singularName() + "s"
     }
 }
@@ -54,7 +54,7 @@ struct ModifyComponentsView<Component: RecipeComponent, DestinationView: ModifyC
                     Spacer()
                 } else {
                     HStack {
-                        Text(Component.pluarlName().capitalized)
+                        Text(Component.pluralName().capitalized)
                             .font(.title)
                             .padding()
                         Spacer()
@@ -74,8 +74,8 @@ struct ModifyComponentsView<Component: RecipeComponent, DestinationView: ModifyC
                         .onDelete {
                             components.remove(atOffsets: $0)
                         }
-                        .onMove { indecies, newOffset in
-                            components.move(fromOffsets: indecies, toOffset: newOffset)
+                        .onMove { indices, newOffset in
+                            components.move(fromOffsets: indices, toOffset: newOffset)
                         }
                         .listRowBackground(listBackgroundColor)
                         NavigationLink(
