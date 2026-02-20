@@ -11,8 +11,8 @@ struct ModifyIngredientView: ModifyComponentView {
     @Binding var ingredient: Ingredient
     @Environment(\.presentationMode) private var mode
     
-    private let listBackgroundColor = AppColor.background
-    private let listTextColor = AppColor.foreground
+    @AppStorage("listBackgroundColor") private var listBackgroundColor = AppColor.background
+    @AppStorage("listTextColor") private var listTextColor = AppColor.foreground
     
     let createAction: (Ingredient) -> Void
     
